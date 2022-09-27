@@ -1,4 +1,4 @@
-package com.example.p2p
+package com.p2pltd.p2pClub
 
 import io.flutter.embedding.android.FlutterActivity
 
