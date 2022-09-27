@@ -67,7 +67,7 @@ class _P2PAppState extends State<P2PApp> {
             AnalyticsService.to.getAnalyticsObserver(),
           ],
           onGenerateRoute: RouteGenerator.generateRoute,
-          initialRoute: Routes.index,
+          initialRoute: Routes.splash,
           builder: (BuildContext ctx, Widget? child) {
             return Scaffold(
               body: BlocListener<NotificationBloc, NotificationState>(
