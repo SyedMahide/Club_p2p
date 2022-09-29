@@ -11,5 +11,5 @@ abstract class _Paths {
   _Paths._();
   static const HOME = '/home';
   static const SPLASH = '/splash';
-  static const LOGIN = '/login';
+  static const SignUp = '/signup';
 }

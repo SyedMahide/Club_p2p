@@ -9,14 +9,43 @@ class SplashView extends GetView<SplashController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('SplashView'),
-        centerTitle: true,
-      ),
+      backgroundColor: Colors.black,
       body: Center(
-        child: Text(
-          'SplashView is not working',
-          style: TextStyle(fontSize: 20),
+        child: Column(
+          children: [
+            Container(
+              margin: EdgeInsets.only(top: 180),
+              child: const Image(
+                image: AssetImage("assets/splash.png"),
+              ),
+            ),
+            Container(
+              alignment: Alignment.center,
+              margin: const EdgeInsets.only(top: 38),
+              child: const Text(
+                "Club P2P",
+                style: TextStyle(
+                  fontFamily: 'Quantico',
+                  fontWeight: FontWeight.w400,
+                  fontSize: 34,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            Container(
+              alignment: Alignment.center,
+              margin: EdgeInsets.only(top: 8),
+              child: const Text(
+                "A sister concern of WECON properties",
+                style: TextStyle(
+                  fontFamily: 'Quantico',
+                  fontWeight: FontWeight.w700,
+                  fontSize: 14,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

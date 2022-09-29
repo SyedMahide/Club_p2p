@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:p2p/app/modules/home/bindings/home_binding.dart';
 import 'package:p2p/app/modules/home/views/home_view.dart';
-import 'package:p2p/app/modules/onboard/login/bindings/login_binding.dart';
-import 'package:p2p/app/modules/onboard/login/views/login_view.dart';
+import 'package:p2p/app/modules/onboard/signup/bindings/signup_binding.dart';
+import 'package:p2p/app/modules/onboard/signup/views/signup_view.dart';
 import 'package:p2p/app/modules/onboard/splash/bindings/splash_binding.dart';
 import 'package:p2p/app/modules/onboard/splash/views/splash_view.dart';
 import 'package:p2p/shared/analytics.dart';
@@ -37,10 +37,10 @@ class RouteGenerator {
           binding: SplashBinding(),
           settings: settings,
         );
-      case Routes.login:
+      case Routes.signup:
         return GetPageRoute<dynamic>(
-          page: () => const LoginView(),
-          binding: LoginBinding(),
+          page: () =>  SignUpView(),
+          binding: SignUpBinding(),
           settings: settings,
         );
 
