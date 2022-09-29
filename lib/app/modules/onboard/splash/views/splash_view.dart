@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:p2p/shared/constants.dart';
 
+import '../../../../styles/colors.dart';
 import '../controllers/splash_controller.dart';
 
 class SplashView extends GetView<SplashController> {
@@ -10,7 +11,7 @@ class SplashView extends GetView<SplashController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: SGColors.black,
       body: Center(
         child: Column(
           children: [
@@ -29,7 +30,7 @@ class SplashView extends GetView<SplashController> {
                   fontFamily: 'Quantico',
                   fontWeight: FontWeight.w400,
                   fontSize: 34,
-                  color: Colors.white,
+                  color: SGColors.white,
                 ),
               ),
             ),
@@ -42,7 +43,7 @@ class SplashView extends GetView<SplashController> {
                   fontFamily: 'Quantico',
                   fontWeight: FontWeight.w700,
                   fontSize: 14,
-                  color: Colors.white,
+                  color: SGColors.white,
                 ),
               ),
             ),

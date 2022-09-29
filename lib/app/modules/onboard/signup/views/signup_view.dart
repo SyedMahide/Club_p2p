@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:p2p/shared/constants.dart';
 
+import '../../../../styles/colors.dart';
 import '../controllers/signup_controller.dart';
 
 class SignUpView extends GetView<SignUpController> {
@@ -12,7 +13,7 @@ class SignUpView extends GetView<SignUpController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: SGColors.black,
       body: SingleChildScrollView(
         child: Form(
           key: controller.formKey,
@@ -28,7 +29,7 @@ class SignUpView extends GetView<SignUpController> {
                       fontSize: 18,
                       fontWeight: FontWeight.w400,
                       fontStyle: FontStyle.normal,
-                      color: Colors.white),
+                      color: SGColors.white),
                 ),
               ),
               Container(
@@ -41,7 +42,7 @@ class SignUpView extends GetView<SignUpController> {
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
                     fontStyle: FontStyle.normal,
-                    color: Colors.white,
+                    color: SGColors.white,
                   ),
                 ),
               ),
@@ -55,7 +56,7 @@ class SignUpView extends GetView<SignUpController> {
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
                     fontStyle: FontStyle.normal,
-                    color: Colors.white,
+                    color: SGColors.white,
                   ),
                 ),
               ),
@@ -63,9 +64,9 @@ class SignUpView extends GetView<SignUpController> {
                 padding: const EdgeInsets.only(top: 12, left: 25, right: 18),
                 child: TextFormField(
                   keyboardType: TextInputType.text,
-                  cursorColor: Colors.white,
+                  cursorColor: SGColors.white,
                   style: const TextStyle(
-                      color: Colors.white,
+                      color: SGColors.white,
                       fontFamily: 'Questrial',
                       fontWeight: FontWeight.w400,
                       fontSize: 14,
@@ -80,23 +81,23 @@ class SignUpView extends GetView<SignUpController> {
                     border: InputBorder.none,
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                      borderSide: BorderSide(color: Colors.white),
+                      borderSide: BorderSide(color: SGColors.white),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                      borderSide: BorderSide(color: Colors.white),
+                      borderSide: BorderSide(color: SGColors.white),
                     ),
                     errorBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(8.0)),
                         borderSide: BorderSide(
                           width: 1,
-                          color: Colors.red,
+                          color: SGColors.red,
                         )),
                     focusedErrorBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(8.0)),
                       borderSide: BorderSide(
                         width: 1,
-                        color: Colors.red,
+                        color: SGColors.red,
                       ),
                     ),
 
@@ -128,7 +129,7 @@ class SignUpView extends GetView<SignUpController> {
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
                     fontStyle: FontStyle.normal,
-                    color: Colors.white,
+                    color: SGColors.white,
                   ),
                 ),
               ),
@@ -136,41 +137,41 @@ class SignUpView extends GetView<SignUpController> {
                 padding: const EdgeInsets.only(top: 12, left: 25, right: 18),
                 child: TextFormField(
                   keyboardType: TextInputType.text,
-                  cursorColor: Colors.white,
+                  cursorColor: SGColors.white,
                   style: const TextStyle(
-                      color: Colors.white,
+                      color: SGColors.white,
                       fontFamily: 'Questrial',
                       fontWeight: FontWeight.w400,
                       fontSize: 14,
                       fontStyle: FontStyle.normal),
                   decoration: const InputDecoration(
-                    prefixIcon: Icon(Icons.email_outlined, color: Colors.white),
+                    prefixIcon: Icon(Icons.email_outlined, color: SGColors.white),
                     border: InputBorder.none,
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                      borderSide: BorderSide(color: Colors.white),
+                      borderSide: BorderSide(color: SGColors.white),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                      borderSide: BorderSide(color: Colors.white),
+                      borderSide: BorderSide(color: SGColors.white),
                     ),
                     errorBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(8.0)),
                         borderSide: BorderSide(
                           width: 1,
-                          color: Colors.red,
+                          color: SGColors.red,
                         )),
                     focusedErrorBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(8.0)),
                       borderSide: BorderSide(
                         width: 1,
-                        color: Colors.red,
+                        color: SGColors.red,
                       ),
                     ),
                     hintText: "rafidrahman38@gmail.com",
                     hintStyle: TextStyle(
                       fontFamily: 'Questrial',
-                      color: Colors.white,
+                      color: SGColors.white,
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
                       fontStyle: FontStyle.normal,
@@ -198,7 +199,7 @@ class SignUpView extends GetView<SignUpController> {
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
                     fontStyle: FontStyle.normal,
-                    color: Colors.white,
+                    color: SGColors.white,
                   ),
                 ),
               ),
@@ -206,42 +207,42 @@ class SignUpView extends GetView<SignUpController> {
                 padding: const EdgeInsets.only(top: 12, left: 25, right: 18),
                 child: TextFormField(
                   keyboardType: TextInputType.text,
-                  cursorColor: Colors.white,
+                  cursorColor: SGColors.white,
                   style: const TextStyle(
-                      color: Colors.white,
+                      color: SGColors.white,
                       fontFamily: 'Questrial',
                       fontWeight: FontWeight.w400,
                       fontSize: 14,
                       fontStyle: FontStyle.normal),
                   decoration: const InputDecoration(
                     prefixIcon:
-                        Icon(Icons.phone_android_outlined, color: Colors.white),
+                        Icon(Icons.phone_android_outlined, color: SGColors.white),
                     border: InputBorder.none,
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                      borderSide: BorderSide(color: Colors.white),
+                      borderSide: BorderSide(color: SGColors.white),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                      borderSide: BorderSide(color: Colors.white),
+                      borderSide: BorderSide(color: SGColors.white),
                     ),
                     errorBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(8.0)),
                         borderSide: BorderSide(
                           width: 1,
-                          color: Colors.red,
+                          color: SGColors.red,
                         )),
                     focusedErrorBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(8.0)),
                       borderSide: BorderSide(
                         width: 1,
-                        color: Colors.red,
+                        color: SGColors.red,
                       ),
                     ),
                     hintText: "+8801310002563",
                     hintStyle: TextStyle(
                       fontFamily: 'Questrial',
-                      color: Colors.white,
+                      color: SGColors.white,
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
                       fontStyle: FontStyle.normal,
@@ -269,7 +270,7 @@ class SignUpView extends GetView<SignUpController> {
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
                     fontStyle: FontStyle.normal,
-                    color: Colors.white,
+                    color: SGColors.white,
                   ),
                 ),
               ),
@@ -279,9 +280,9 @@ class SignUpView extends GetView<SignUpController> {
                 child: TextFormField(
                   obscureText: controller.ishiddenPassword,
                   controller: controller.password,
-                  cursorColor: Colors.white,
+                  cursorColor: SGColors.white,
                   style: const TextStyle(
-                      color: Colors.white,
+                      color: SGColors.white,
                       fontFamily: 'Questrial',
                       fontWeight: FontWeight.w400,
                       fontSize: 14,
@@ -289,34 +290,34 @@ class SignUpView extends GetView<SignUpController> {
                   decoration: InputDecoration(
                     prefixIcon: const Icon(
                       Icons.lock_outline_sharp,
-                      color: Colors.white,
+                      color: SGColors.white,
                     ),
                     border: InputBorder.none,
                     enabledBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                      borderSide: BorderSide(color: Colors.white),
+                      borderSide: BorderSide(color: SGColors.white),
                     ),
                     focusedBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                      borderSide: BorderSide(color: Colors.white),
+                      borderSide: BorderSide(color: SGColors.white),
                     ),
                     errorBorder: const OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(8.0)),
                         borderSide: BorderSide(
                           width: 1,
-                          color: Colors.red,
+                          color: SGColors.red,
                         )),
                     focusedErrorBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(8.0)),
                       borderSide: BorderSide(
                         width: 1,
-                        color: Colors.red,
+                        color: SGColors.red,
                       ),
                     ),
                     hintText: "Password",
                     hintStyle: const TextStyle(
                       fontFamily: 'Questrial',
-                      color: Colors.white,
+                      color: SGColors.white,
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
                       fontStyle: FontStyle.normal,
@@ -325,7 +326,7 @@ class SignUpView extends GetView<SignUpController> {
                         icon: Icon(controller.ishiddenPassword
                             ? Icons.visibility_off
                             : Icons.visibility),
-                        color: Colors.white,
+                        color: SGColors.white,
                         onPressed: () {
                           controller.ishiddenPassword =
                               !controller.ishiddenPassword;
@@ -349,7 +350,7 @@ class SignUpView extends GetView<SignUpController> {
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
                     fontStyle: FontStyle.normal,
-                    color: Colors.white,
+                    color: SGColors.white,
                   ),
                 ),
               ),
@@ -358,36 +359,36 @@ class SignUpView extends GetView<SignUpController> {
                 child: TextFormField(
                   obscureText: controller.ishiddenConfirmPassword,
                   controller: controller.confirmPassword,
-                  cursorColor: Colors.white,
+                  cursorColor: SGColors.white,
                   style: const TextStyle(
-                      color: Colors.white,
+                      color: SGColors.white,
                       fontFamily: 'Questrial',
                       fontWeight: FontWeight.w400,
                       fontSize: 14,
                       fontStyle: FontStyle.normal),
                   decoration: InputDecoration(
                     prefixIcon: const Icon(Icons.lock_outline_sharp,
-                        color: Colors.white),
+                        color: SGColors.white),
                     border: InputBorder.none,
                     enabledBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                      borderSide: BorderSide(color: Colors.white),
+                      borderSide: BorderSide(color: SGColors.white),
                     ),
                     focusedBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                      borderSide: BorderSide(color: Colors.white),
+                      borderSide: BorderSide(color: SGColors.white),
                     ),
                     errorBorder: const OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(8.0)),
                         borderSide: BorderSide(
                           width: 1,
-                          color: Colors.red,
+                          color: SGColors.red,
                         )),
                     focusedErrorBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(8.0)),
                       borderSide: BorderSide(
                         width: 1,
-                        color: Colors.red,
+                        color: SGColors.red,
                       ),
                     ),
 
@@ -395,7 +396,7 @@ class SignUpView extends GetView<SignUpController> {
                     hintText: "Confirm Password",
                     hintStyle: const TextStyle(
                       fontFamily: 'Questrial',
-                      color: Colors.white,
+                      color: SGColors.white,
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
                       fontStyle: FontStyle.normal,
@@ -404,7 +405,7 @@ class SignUpView extends GetView<SignUpController> {
                         icon: Icon(controller.ishiddenConfirmPassword
                             ? Icons.visibility_off
                             : Icons.visibility),
-                        color: Colors.white,
+                        color: SGColors.white,
                         onPressed: () {
                           controller.ishiddenConfirmPassword =
                               !controller.ishiddenConfirmPassword;
@@ -431,13 +432,13 @@ class SignUpView extends GetView<SignUpController> {
                     Expanded(
                       flex: 1,
                       child: Checkbox(
-                        checkColor: Colors.white,
+                        checkColor: SGColors.white,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(2.0),
                         ),
                         side: MaterialStateBorderSide.resolveWith(
                           (states) =>
-                              BorderSide(width: 1.0, color: Colors.white),
+                              BorderSide(width: 1.0, color: SGColors.white),
                         ),
                         value: controller.value,
                         onChanged: (bool? value) {
@@ -460,7 +461,7 @@ class SignUpView extends GetView<SignUpController> {
                               fontSize: 14,
                               fontWeight: FontWeight.w400,
                               fontStyle: FontStyle.normal,
-                              color: Colors.white),
+                              color: SGColors.white),
                         ),
                       ),
                     ),
@@ -483,7 +484,7 @@ class SignUpView extends GetView<SignUpController> {
                     //   print("Not worked");
                     // }
                   },
-                  color: Color(0xff4048BF),
+                  color:  SGColors.blue,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)),
                   child: Row(
@@ -497,7 +498,7 @@ class SignUpView extends GetView<SignUpController> {
                           child: const Text(
                             "Sign up",
                             style: TextStyle(
-                                color: Colors.white,
+                                color: SGColors.white,
                                 fontWeight: FontWeight.w400,
                                 fontFamily: "Questrial",
                                 fontStyle: FontStyle.normal,
@@ -513,7 +514,7 @@ class SignUpView extends GetView<SignUpController> {
                             //alignment: Alignment.centerRight,
                             child: const Icon(
                               Icons.arrow_forward,
-                              color: Colors.white,
+                              color: SGColors.white,
                             ),
                           )),
                       Expanded(
@@ -521,8 +522,8 @@ class SignUpView extends GetView<SignUpController> {
                           child: Container(
                               margin: EdgeInsets.only(right: 15),
                               //alignment: Alignment.centerRight,
-                              child: Image(
-                                image: AssetImage("assets/].png"),
+                              child: const Image(
+                                image: AssetImage(AssetConst.icMark),
                               ))),
                     ],
                   ),
@@ -536,7 +537,7 @@ class SignUpView extends GetView<SignUpController> {
                         text: "Already Have An Account? ",
                         style: const TextStyle(
                           fontFamily: 'Questrial',
-                          color: Colors.white,
+                          color: SGColors.white,
                           fontSize: 12,
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
@@ -546,7 +547,7 @@ class SignUpView extends GetView<SignUpController> {
                               text: "Sign in",
                               style: const TextStyle(
                                 fontFamily: 'Questrial',
-                                color: Colors.white,
+                                color: SGColors.white,
                                 fontSize: 12,
                                 fontWeight: FontWeight.w500,
                                 fontStyle: FontStyle.normal,
