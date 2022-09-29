@@ -1,7 +1,16 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SignUpController extends GetxController {
-  //TODO: Implement LoginController
+  bool value = false;
+
+  bool ishiddenPassword = true;
+  bool ishiddenConfirmPassword = true;
+
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  final TextEditingController password = TextEditingController();
+  final TextEditingController confirmPassword = TextEditingController();
 
   final count = 0.obs;
   @override

@@ -39,7 +39,7 @@ class RouteGenerator {
         );
       case Routes.signup:
         return GetPageRoute<dynamic>(
-          page: () =>  SignUpView(),
+          page: () => const SignUpView(),
           binding: SignUpBinding(),
           settings: settings,
         );
