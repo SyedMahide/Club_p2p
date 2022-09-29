@@ -2,11 +2,12 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:p2p/shared/constants.dart';
 
 import '../controllers/signup_controller.dart';
 
 class SignUpView extends GetView<SignUpController> {
-      SignUpView({Key? key}) : super(key: key);
+  SignUpView({Key? key}) : super(key: key);
 
   bool value = false;
 
@@ -84,7 +85,7 @@ class SignUpView extends GetView<SignUpController> {
                       prefixIcon: Padding(
                         padding: EdgeInsets.all(0.0),
                         child: Image(
-                          image: AssetImage("assets/user.png"),
+                          image: AssetImage(AssetConst.icUser),
                         ),
                       ),
                       border: InputBorder.none,
@@ -155,7 +156,7 @@ class SignUpView extends GetView<SignUpController> {
                         fontStyle: FontStyle.normal),
                     decoration: const InputDecoration(
                       prefixIcon:
-                      Icon(Icons.email_outlined, color: Colors.white),
+                          Icon(Icons.email_outlined, color: Colors.white),
                       border: InputBorder.none,
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(8.0)),
@@ -339,7 +340,7 @@ class SignUpView extends GetView<SignUpController> {
                           color: Colors.white,
                           onPressed: () {
                             ishiddenPassword = !ishiddenPassword;
-                           // setState(() {});
+                            // setState(() {});
                           }),
                     ),
                     validator: (String? value) {
@@ -418,7 +419,7 @@ class SignUpView extends GetView<SignUpController> {
                           color: Colors.white,
                           onPressed: () {
                             ishiddenConfirmPassword = !ishiddenConfirmPassword;
-                          //  setState(() {});
+                            //  setState(() {});
                           }),
                     ),
                     validator: (String? value) {
@@ -445,7 +446,7 @@ class SignUpView extends GetView<SignUpController> {
                             borderRadius: BorderRadius.circular(2.0),
                           ),
                           side: MaterialStateBorderSide.resolveWith(
-                                (states) =>
+                            (states) =>
                                 BorderSide(width: 1.0, color: Colors.white),
                           ),
                           value: this.value,
@@ -463,7 +464,7 @@ class SignUpView extends GetView<SignUpController> {
                           margin: EdgeInsets.only(right: 20),
                           child: const Text(
                             "By creating an account, you are to our "
-                                "         Terms & Conditions",
+                            "         Terms & Conditions",
                             style: TextStyle(
                                 fontFamily: 'Questrial',
                                 fontSize: 14,
@@ -579,6 +580,4 @@ class SignUpView extends GetView<SignUpController> {
       ),
     );
   }
-
-
-
+}

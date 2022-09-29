@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:p2p/shared/constants.dart';
 
 import '../controllers/splash_controller.dart';
 
@@ -14,9 +15,9 @@ class SplashView extends GetView<SplashController> {
         child: Column(
           children: [
             Container(
-              margin: EdgeInsets.only(top: 180),
+              margin: const EdgeInsets.only(top: 180),
               child: const Image(
-                image: AssetImage("assets/splash.png"),
+                image: AssetImage(AssetConst.icSplash),
               ),
             ),
             Container(
@@ -34,7 +35,7 @@ class SplashView extends GetView<SplashController> {
             ),
             Container(
               alignment: Alignment.center,
-              margin: EdgeInsets.only(top: 8),
+              margin: const EdgeInsets.only(top: 8),
               child: const Text(
                 "A sister concern of WECON properties",
                 style: TextStyle(

@@ -12,3 +12,8 @@ class SharedConst {
 class JsonPath {
   static const String json_home_page = 'assets/json/home_page.json';
 }
+
+class AssetConst {
+  static const String icUser = 'assets/user.png';
+  static const String icSplash = 'assets/splash.png';
+}
