@@ -145,7 +145,8 @@ class SignUpView extends GetView<SignUpController> {
                       fontSize: 14,
                       fontStyle: FontStyle.normal),
                   decoration: const InputDecoration(
-                    prefixIcon: Icon(Icons.email_outlined, color: SGColors.white),
+                    prefixIcon:
+                        Icon(Icons.email_outlined, color: SGColors.white),
                     border: InputBorder.none,
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(8.0)),
@@ -215,8 +216,8 @@ class SignUpView extends GetView<SignUpController> {
                       fontSize: 14,
                       fontStyle: FontStyle.normal),
                   decoration: const InputDecoration(
-                    prefixIcon:
-                        Icon(Icons.phone_android_outlined, color: SGColors.white),
+                    prefixIcon: Icon(Icons.phone_android_outlined,
+                        color: SGColors.white),
                     border: InputBorder.none,
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(8.0)),
@@ -426,36 +427,15 @@ class SignUpView extends GetView<SignUpController> {
               ),
               Container(
                 alignment: Alignment.topLeft,
-                margin: EdgeInsets.only(top: 20, left: 25),
+                margin: const EdgeInsets.only(top: 20, left: 25),
                 child: Row(
                   children: [
                     Expanded(
-                      flex: 1,
-                      child: Checkbox(
-                        checkColor: SGColors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(2.0),
-                        ),
-                        side: MaterialStateBorderSide.resolveWith(
-                          (states) =>
-                              BorderSide(width: 1.0, color: SGColors.white),
-                        ),
-                        value: controller.value,
-                        onChanged: (bool? value) {
-                          // setState(() {
-                          //   this.value = value!;
-                          // });
-                        },
-                      ),
-                    ),
-                    Spacer(),
-                    Expanded(
                       flex: 14,
                       child: Container(
-                        margin: EdgeInsets.only(right: 20),
+                        margin: const EdgeInsets.only(right: 20),
                         child: const Text(
-                          "By creating an account, you are to our "
-                          "         Terms & Conditions",
+                          "By creating an account, you are accepting our Terms & Conditions",
                           style: TextStyle(
                               fontFamily: 'Questrial',
                               fontSize: 14,
@@ -484,7 +464,7 @@ class SignUpView extends GetView<SignUpController> {
                     //   print("Not worked");
                     // }
                   },
-                  color:  SGColors.blue,
+                  color: SGColors.blue,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)),
                   child: Row(
@@ -510,7 +490,7 @@ class SignUpView extends GetView<SignUpController> {
                       Expanded(
                           flex: 1,
                           child: Container(
-                            margin: EdgeInsets.only(left: 10),
+                            margin: const EdgeInsets.only(left: 10),
                             //alignment: Alignment.centerRight,
                             child: const Icon(
                               Icons.arrow_forward,
@@ -518,13 +498,15 @@ class SignUpView extends GetView<SignUpController> {
                             ),
                           )),
                       Expanded(
-                          flex: 1,
-                          child: Container(
-                              margin: EdgeInsets.only(right: 15),
-                              //alignment: Alignment.centerRight,
-                              child: const Image(
-                                image: AssetImage(AssetConst.icMark),
-                              ))),
+                        flex: 1,
+                        child: Container(
+                          margin: const EdgeInsets.only(right: 15),
+                          //alignment: Alignment.centerRight,
+                          child: const Image(
+                            image: AssetImage(AssetConst.icMark),
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -564,6 +546,7 @@ class SignUpView extends GetView<SignUpController> {
                   ),
                 ),
               ),
+              const SizedBox(height: 100)
             ],
           )),
         ),

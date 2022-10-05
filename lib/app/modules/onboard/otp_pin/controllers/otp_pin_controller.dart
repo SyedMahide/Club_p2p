@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:js';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -17,14 +16,14 @@ class OtpPinController extends GetxController {
   String currentText = "";
   final formKey = GlobalKey<FormState>();
 
-
   final count = 0.obs;
 
   @override
   void initState() {
     errorController = StreamController<ErrorAnimationType>();
-   // super.initState();
+    // super.initState();
   }
+
   @override
   void dispose() {
     errorController!.close();

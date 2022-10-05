@@ -8,8 +8,7 @@ import '../modules/onboard/signin/bindings/signin_binding.dart';
 import '../modules/onboard/signin/views/signin_view.dart';
 import '../modules/onboard/signup/bindings/signup_binding.dart';
 import '../modules/onboard/signup/views/signup_view.dart';
-import '../modules/onboard/splash/bindings/splash_binding.dart';
-import '../modules/onboard/splash/views/splash_view.dart';
+import '../modules/onboard/splash/splash_view.dart';
 
 part 'app_routes.dart';
 
@@ -23,11 +22,6 @@ class AppPages {
       name: _Paths.HOME,
       page: () => const HomeView(),
       binding: HomeBinding(),
-    ),
-    GetPage(
-      name: _Paths.SPLASH,
-      page: () => const SplashView(),
-      binding: SplashBinding(),
     ),
     GetPage(
       name: _Paths.SignUp,

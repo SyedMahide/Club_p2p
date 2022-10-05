@@ -1,13 +1,30 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:p2p/app/routes/routes.dart';
 import 'package:p2p/shared/constants.dart';
 
-import '../../../../styles/colors.dart';
-import '../controllers/splash_controller.dart';
+import '../../../styles/colors.dart';
 
-class SplashView extends GetView<SplashController> {
-  const SplashView({Key? key}) : super(key: key);
+class SplashView extends StatefulWidget {
+  const SplashView({super.key});
+
+  @override
+  State<SplashView> createState() => _SplashViewState();
+}
+
+class _SplashViewState extends State<SplashView> {
+  @override
+  void initState() {
+    Future.delayed(const Duration(milliseconds: 1000), () {
+      Get.toNamed(Routes.signup);
+    });
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

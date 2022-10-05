@@ -6,8 +6,7 @@ import 'package:p2p/app/modules/onboard/otp_pin/bindings/otp_pin_binding.dart';
 import 'package:p2p/app/modules/onboard/otp_pin/views/otp_pin_view.dart';
 import 'package:p2p/app/modules/onboard/signup/bindings/signup_binding.dart';
 import 'package:p2p/app/modules/onboard/signup/views/signup_view.dart';
-import 'package:p2p/app/modules/onboard/splash/bindings/splash_binding.dart';
-import 'package:p2p/app/modules/onboard/splash/views/splash_view.dart';
+import 'package:p2p/app/modules/onboard/splash/splash_view.dart';
 import 'package:p2p/shared/analytics.dart';
 
 import '../modules/onboard/signin/bindings/signin_binding.dart';
@@ -34,13 +33,8 @@ class RouteGenerator {
           binding: HomeBinding(),
           settings: settings,
         );
-
       case Routes.splash:
-        return GetPageRoute<dynamic>(
-          page: () => const SplashView(),
-          binding: SplashBinding(),
-          settings: settings,
-        );
+        return MaterialPageRoute<dynamic>(builder: (_) => const SplashView());
       case Routes.signup:
         return GetPageRoute<dynamic>(
           page: () => const SignUpView(),
@@ -55,7 +49,7 @@ class RouteGenerator {
         );
       case Routes.otp_pin:
         return GetPageRoute<dynamic>(
-          page: () =>const OtpPinView(),
+          page: () => const OtpPinView(),
           binding: OtpPinBinding(),
           settings: settings,
         );
