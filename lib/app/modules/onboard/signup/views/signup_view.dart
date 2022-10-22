@@ -1,8 +1,6 @@
-//import 'dart:html';
-//import 'package:flutter/cupertino.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-//import 'package:flutter/widgets.dart';
 
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
@@ -110,7 +108,7 @@ class SignUpView extends GetView<SignUpController> {
                     hintText: "Iaamamur Rahman",
                     hintStyle: TextStyle(
                       fontFamily: 'Questrial',
-                      color: Colors.white,
+                      color: SGColors.white,
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
                       fontStyle: FontStyle.normal,
@@ -184,7 +182,7 @@ class SignUpView extends GetView<SignUpController> {
                     hintText: "Rafid",
                     hintStyle: TextStyle(
                       fontFamily: 'Questrial',
-                      color: Colors.white,
+                      color: SGColors.white,
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
                       fontStyle: FontStyle.normal,
@@ -390,8 +388,8 @@ class SignUpView extends GetView<SignUpController> {
                     hintText: "xxx-xxx-xxxx",
                     hintStyle: TextStyle(
                       fontFamily: 'Questrial',
-                      color: Colors.white,
-                      fontSize: 14,
+                      color: SGColors.white,
+                      fontSize: 12,
                       fontWeight: FontWeight.w400,
                       fontStyle: FontStyle.normal,
                     ),
@@ -420,19 +418,23 @@ class SignUpView extends GetView<SignUpController> {
               ),
               Container(
                 padding: const EdgeInsets.only(top: 12, left: 25, right: 18),
-                child: TextFormField(
-                  controller: controller.dateOfBirthController,
-                  keyboardType: TextInputType.text,
-                  cursorColor: SGColors.white,
+                child: TextField(
                   style: const TextStyle(
-                      color: SGColors.white,
-                      fontFamily: 'Questrial',
-                      fontWeight: FontWeight.w400,
-                      fontSize: 14,
-                      fontStyle: FontStyle.normal),
+                    fontFamily: 'Questrial',
+                    color: SGColors.white,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
+                    fontStyle: FontStyle.normal,
+                  ),
+                  maxLines: 1,
+                  controller: controller.dateOfBirthController,
+                  readOnly: true,
+                  showCursor: true,
                   decoration: const InputDecoration(
-                    prefixIcon:
-                        Icon(Icons.date_range_outlined, color: SGColors.white),
+                    prefixIcon: Icon(
+                      Icons.perm_identity_outlined,
+                      color: SGColors.white,
+                    ),
                     border: InputBorder.none,
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(8.0)),
@@ -464,15 +466,91 @@ class SignUpView extends GetView<SignUpController> {
                       fontStyle: FontStyle.normal,
                     ),
                   ),
-                  validator: (String? value) {
-                    if (value!.isEmpty) {
-                      return "Please enter you phone number";
-                    }
-                    if (!RegExp('(?:(?:\\+|00)88|01)?\\d{11}')
-                        .hasMatch(value)) {
-                      return "Please enter valid phone number";
-                    }
-                    return null;
+                  onTap: () {
+                    showModalBottomSheet(
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(16.0),
+                          topRight: Radius.circular(16.0),
+                        ),
+                      ),
+                      context: context,
+                      isScrollControlled: true,
+                      builder: (BuildContext builder) {
+                        return Container(
+                          height: 320,
+                          child: SingleChildScrollView(
+                            child: Container(
+                              child: Column(
+                                children: <Widget>[
+                                  const SizedBox(height: 16),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: <Widget>[
+                                      Container(
+                                        padding: const EdgeInsets.only(
+                                            left: 30),
+                                        child: const Text(
+                                          'Date Of Birth',
+                                          style: TextStyle(
+                                                color: SGColors.black,
+                                                fontFamily: 'Questrial',
+                                                fontWeight: FontWeight.w400,
+                                                fontSize: 16,
+                                                fontStyle: FontStyle.normal),
+                                        ),
+                                      ),
+                                      InkWell(
+                                        onTap: () {
+                                          if (controller.temporaryDate != null) {
+                                            controller.eventDate = controller.temporaryDate;
+                                          }
+                                          controller.dateOfBirthController.text = controller.eventDate!
+                                              .toString();
+                                          // checkHasDataChanged();
+                                          Navigator.of(context).pop();
+                                        },
+                                        splashColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        child: Container(
+                                          padding: const EdgeInsets.only(
+                                              right: 30),
+                                          child: const Text(
+                                            'Confirm',
+                                            style: TextStyle(
+                                              color: SGColors.black,
+                                              fontFamily: 'Questrial',
+                                              fontWeight: FontWeight.w400,
+                                              fontSize: 14,
+                                              fontStyle: FontStyle.normal),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                 // const SizedBox(height: 6),
+                                  Container(
+                                    height: 300,
+                                    child: CupertinoDatePicker(
+                                      mode: CupertinoDatePickerMode.date,
+                                      initialDateTime: controller.eventDate,
+                                      onDateTimeChanged: (DateTime date) {
+                                        controller.temporaryDate = date;
+                                      },
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    ).then(
+                      (dynamic value) {
+                        controller.temporaryDate = null;
+                      },
+                    );
                   },
                 ),
               ),
@@ -531,11 +609,11 @@ class SignUpView extends GetView<SignUpController> {
                     ),
 
                     // border: OutlineInputBorder(),
-                    hintText: "xxx-xxx-xxxx",
+                    hintText: "Businessman",
                     hintStyle: TextStyle(
                       fontFamily: 'Questrial',
-                      color: Colors.white,
-                      fontSize: 14,
+                      color: SGColors.white,
+                      fontSize: 12,
                       fontWeight: FontWeight.w400,
                       fontStyle: FontStyle.normal,
                     ),
