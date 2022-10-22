@@ -1,9 +1,14 @@
+//import 'dart:html';
+//import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+//import 'package:flutter/widgets.dart';
 
 import 'package:get/get.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:p2p/shared/constants.dart';
 
+import '../../../../routes/app_pages.dart';
 import '../../../../styles/colors.dart';
 import '../controllers/signup_controller.dart';
 
@@ -50,7 +55,7 @@ class SignUpView extends GetView<SignUpController> {
                 alignment: Alignment.topLeft,
                 margin: const EdgeInsets.only(top: 35, left: 25),
                 child: const Text(
-                  "Full Name",
+                  "First Name",
                   style: TextStyle(
                     fontFamily: 'Questrial',
                     fontSize: 12,
@@ -102,7 +107,7 @@ class SignUpView extends GetView<SignUpController> {
                     ),
 
                     // border: OutlineInputBorder(),
-                    hintText: "Iaamamur Rahman Rafid",
+                    hintText: "Iaamamur Rahman",
                     hintStyle: TextStyle(
                       fontFamily: 'Questrial',
                       color: Colors.white,
@@ -113,7 +118,80 @@ class SignUpView extends GetView<SignUpController> {
                   ),
                   validator: (String? value) {
                     if (value!.isEmpty) {
-                      return "Please enter name";
+                      return "Enter your name";
+                    }
+                    return null;
+                  },
+                ),
+              ),
+              Container(
+                alignment: Alignment.topLeft,
+                margin: const EdgeInsets.only(top: 16, left: 25),
+                child: const Text(
+                  "Last Name",
+                  style: TextStyle(
+                    fontFamily: 'Questrial',
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
+                    fontStyle: FontStyle.normal,
+                    color: SGColors.white,
+                  ),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.only(top: 12, left: 25, right: 18),
+                child: TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: SGColors.white,
+                  style: const TextStyle(
+                      color: SGColors.white,
+                      fontFamily: 'Questrial',
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14,
+                      fontStyle: FontStyle.normal),
+                  decoration: const InputDecoration(
+                    prefixIcon: Padding(
+                      padding: EdgeInsets.all(0.0),
+                      child: Image(
+                        image: AssetImage(AssetConst.icUser),
+                      ),
+                    ),
+                    border: InputBorder.none,
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                      borderSide: BorderSide(color: SGColors.white),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                      borderSide: BorderSide(color: SGColors.white),
+                    ),
+                    errorBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                        borderSide: BorderSide(
+                          width: 1,
+                          color: SGColors.red,
+                        )),
+                    focusedErrorBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                      borderSide: BorderSide(
+                        width: 1,
+                        color: SGColors.red,
+                      ),
+                    ),
+
+                    // border: OutlineInputBorder(),
+                    hintText: "Rafid",
+                    hintStyle: TextStyle(
+                      fontFamily: 'Questrial',
+                      color: Colors.white,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                      fontStyle: FontStyle.normal,
+                    ),
+                  ),
+                  validator: (String? value) {
+                    if (value!.isEmpty) {
+                      return "Enter your name";
                     }
                     return null;
                   },
@@ -261,6 +339,219 @@ class SignUpView extends GetView<SignUpController> {
                   },
                 ),
               ),
+              Container(
+                alignment: Alignment.topLeft,
+                margin: const EdgeInsets.only(top: 16, left: 25),
+                child: const Text(
+                  "NID/ PASSPORT / BIRTH CERT.",
+                  style: TextStyle(
+                    fontFamily: 'Questrial',
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
+                    fontStyle: FontStyle.normal,
+                    color: SGColors.white,
+                  ),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.only(top: 10, left: 25, right: 18),
+                child: TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: SGColors.white,
+                  style: const TextStyle(
+                      color: SGColors.white,
+                      fontFamily: 'Questrial',
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14,
+                      fontStyle: FontStyle.normal),
+                  decoration: const InputDecoration(
+                    prefixIcon: Icon(
+                      Icons.perm_identity_outlined,
+                      color: SGColors.white,
+                    ),
+                    border: InputBorder.none,
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                      borderSide: BorderSide(color: SGColors.white),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                      borderSide: BorderSide(color: SGColors.white),
+                    ),
+                    errorBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                        borderSide: BorderSide(
+                          width: 1,
+                          color: SGColors.red,
+                        )),
+                    focusedErrorBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                      borderSide: BorderSide(
+                        width: 1,
+                        color: SGColors.red,
+                      ),
+                    ),
+
+                    // border: OutlineInputBorder(),
+                    hintText: "xxx-xxx-xxxx",
+                    hintStyle: TextStyle(
+                      fontFamily: 'Questrial',
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      fontStyle: FontStyle.normal,
+                    ),
+                  ),
+                  validator: (String? value) {
+                    if (value!.isEmpty) {
+                      return "Enter your name";
+                    }
+                    return null;
+                  },
+                ),
+              ),
+              Container(
+                alignment: Alignment.topLeft,
+                margin: const EdgeInsets.only(top: 16, left: 25),
+                child: const Text(
+                  "Date Of Birth",
+                  style: TextStyle(
+                    fontFamily: 'Questrial',
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
+                    fontStyle: FontStyle.normal,
+                    color: SGColors.white,
+                  ),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.only(top: 12, left: 25, right: 18),
+                child: TextFormField(
+                  keyboardType: TextInputType.text,
+                  cursorColor: SGColors.white,
+                  style: const TextStyle(
+                      color: SGColors.white,
+                      fontFamily: 'Questrial',
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14,
+                      fontStyle: FontStyle.normal),
+                  decoration: const InputDecoration(
+                    prefixIcon: Icon(Icons.date_range_outlined,
+                        color: SGColors.white),
+                    border: InputBorder.none,
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                      borderSide: BorderSide(color: SGColors.white),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                      borderSide: BorderSide(color: SGColors.white),
+                    ),
+                    errorBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                        borderSide: BorderSide(
+                          width: 1,
+                          color: SGColors.red,
+                        )),
+                    focusedErrorBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                      borderSide: BorderSide(
+                        width: 1,
+                        color: SGColors.red,
+                      ),
+                    ),
+                    hintText: "00-00-0000",
+                    hintStyle: TextStyle(
+                      fontFamily: 'Questrial',
+                      color: SGColors.white,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                      fontStyle: FontStyle.normal,
+                    ),
+                  ),
+                  validator: (String? value) {
+                    if (value!.isEmpty) {
+                      return "Please enter you phone number";
+                    }
+                    if (!RegExp('(?:(?:\\+|00)88|01)?\\d{11}')
+                        .hasMatch(value)) {
+                      return "Please enter valid phone number";
+                    }
+                    return null;
+                  },
+                ),
+              ),
+          Container(
+            alignment: Alignment.topLeft,
+            margin: const EdgeInsets.only(top: 16, left: 25),
+            child: const Text(
+              "Profession",
+              style: TextStyle(
+                fontFamily: 'Questrial',
+                fontSize: 12,
+                fontWeight: FontWeight.w400,
+                fontStyle: FontStyle.normal,
+                color: SGColors.white,
+              ),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.only(top: 10, left: 25, right: 18),
+            child: TextFormField(
+              keyboardType: TextInputType.text,
+              cursorColor: SGColors.white,
+              style: const TextStyle(
+                  color: SGColors.white,
+                  fontFamily: 'Questrial',
+                  fontWeight: FontWeight.w400,
+                  fontSize: 14,
+                  fontStyle: FontStyle.normal),
+              decoration: const InputDecoration(
+                prefixIcon: Icon(
+                  Icons.work_outline_outlined,
+                  color: SGColors.white,
+                ),
+                border: InputBorder.none,
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                  borderSide: BorderSide(color: SGColors.white),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                  borderSide: BorderSide(color: SGColors.white),
+                ),
+                errorBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                    borderSide: BorderSide(
+                      width: 1,
+                      color: SGColors.red,
+                    )),
+                focusedErrorBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                  borderSide: BorderSide(
+                    width: 1,
+                    color: SGColors.red,
+                  ),
+                ),
+
+                // border: OutlineInputBorder(),
+                hintText: "xxx-xxx-xxxx",
+                hintStyle: TextStyle(
+                  fontFamily: 'Questrial',
+                  color: Colors.white,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                  fontStyle: FontStyle.normal,
+                ),
+              ),
+              validator: (String? value) {
+                if (value!.isEmpty) {
+                  return "Enter your name";
+                }
+                return null;
+              },
+            ),
+          ),
               Container(
                 alignment: Alignment.topLeft,
                 margin: const EdgeInsets.only(top: 16, left: 25),
@@ -535,13 +826,8 @@ class SignUpView extends GetView<SignUpController> {
                                 fontStyle: FontStyle.normal,
                               ),
                               recognizer: TapGestureRecognizer()
-                                ..onTap = () {
-                                  // Navigator.push(
-                                  //   context,
-                                  //   MaterialPageRoute(
-                                  //       builder: (context) => SignInScreen()),
-                                  // );
-                                }),
+                              //  ..onTap = () => Get.toNamed(Routes.signin);
+                                ),
                         ]),
                   ),
                 ),
