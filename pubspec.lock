@@ -64,6 +64,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
+  bottom_navy_bar:
+    dependency: "direct main"
+    description:
+      name: bottom_navy_bar
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "6.0.0"
   build:
     dependency: transitive
     description:
@@ -197,6 +204,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.3.0"
+  dots_indicator:
+    dependency: "direct main"
+    description:
+      name: dots_indicator
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.0"
   email_validator:
     dependency: "direct main"
     description:
@@ -314,6 +328,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "5.0.0"
+  flutter_screenutil:
+    dependency: "direct main"
+    description:
+      name: flutter_screenutil
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.5.4"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -499,6 +520,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.5"
+  page_view_indicators:
+    dependency: "direct main"
+    description:
+      name: page_view_indicators
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0"
   path:
     dependency: transitive
     description:

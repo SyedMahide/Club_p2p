@@ -52,6 +52,7 @@ class AssetConst {
   static const String icMeetings = 'assets/meetings.png';
   static const String icEvents_screen = 'assets/events_screen.png';
   static const String icCard_screen = 'assets/card_screen.png';
+  static const String icEvent = 'assets/events.png';
 
 
 }

@@ -10,4 +10,7 @@ class SGColors {
   static const Color black = Color(0xff000000);
   static const Color blue =  Color(0xff4048BF);
   static const Color skyBlue =  Color(0xff1877F2);
+  static const Color green =  Color(0xff4CAF50);
+  static const Color indigo =  Color(0xff3F51B5);
+
 }

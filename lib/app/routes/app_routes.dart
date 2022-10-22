@@ -7,6 +7,9 @@ abstract class Routes {
   // static const LOGIN = _Paths.ONBOARD + _Paths.LOGIN;
   // static const SIGNIN = _Paths.ONBOARD + _Paths.SIGNIN;
   //static const OTP_PIN = _Paths.ONBOARD + _Paths.OTP_PIN;
+  //static const OFFERS = _Paths.OFFERS;
+  //static const EXPLORE = _Paths.EXPLORE;
+  //static const MAIN_SCREEN = _Paths.MAIN_SCREEN;
 }
 
 abstract class _Paths {
@@ -16,4 +19,7 @@ abstract class _Paths {
   static const SignUp = '/signup';
   static const SIGNIN = '/signin';
   static const OTP_PIN = '/otp-pin';
+  static const OFFERS = '/offers';
+  static const EXPLORE = '/explore';
+  static const MAIN_SCREEN = '/main-screen';
 }
