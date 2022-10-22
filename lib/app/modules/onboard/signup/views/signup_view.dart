@@ -63,6 +63,7 @@ class SignUpView extends GetView<SignUpController> {
               Container(
                 padding: const EdgeInsets.only(top: 12, left: 25, right: 18),
                 child: TextFormField(
+                  controller: controller.lastNameController,
                   keyboardType: TextInputType.text,
                   cursorColor: SGColors.white,
                   style: const TextStyle(
@@ -100,8 +101,6 @@ class SignUpView extends GetView<SignUpController> {
                         color: SGColors.red,
                       ),
                     ),
-
-                    // border: OutlineInputBorder(),
                     hintText: "Iaamamur Rahman Rafid",
                     hintStyle: TextStyle(
                       fontFamily: 'Questrial',
@@ -280,7 +279,7 @@ class SignUpView extends GetView<SignUpController> {
                 margin: const EdgeInsets.only(top: 12, left: 25, right: 18),
                 child: TextFormField(
                   obscureText: controller.ishiddenPassword,
-                  controller: controller.password,
+                  controller: controller.passwordController,
                   cursorColor: SGColors.white,
                   style: const TextStyle(
                       color: SGColors.white,
@@ -359,7 +358,7 @@ class SignUpView extends GetView<SignUpController> {
                 margin: const EdgeInsets.only(top: 12, left: 25, right: 18),
                 child: TextFormField(
                   obscureText: controller.ishiddenConfirmPassword,
-                  controller: controller.confirmPassword,
+                  controller: controller.confirmPasswordController,
                   cursorColor: SGColors.white,
                   style: const TextStyle(
                       color: SGColors.white,
@@ -417,8 +416,8 @@ class SignUpView extends GetView<SignUpController> {
                     if (value!.isEmpty) {
                       return "Please re-enter password";
                     }
-                    if (controller.password.text !=
-                        controller.confirmPassword.text) {
+                    if (controller.passwordController.text !=
+                        controller.confirmPasswordController.text) {
                       return "Password do not match";
                     }
                     return null;
@@ -452,18 +451,7 @@ class SignUpView extends GetView<SignUpController> {
                 alignment: Alignment.center,
                 margin: const EdgeInsets.only(top: 20, left: 40, right: 40),
                 child: MaterialButton(
-                  onPressed: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(builder: (context) => SignInScreen()),
-                    // );
-                    // if (_formKey.currentState!.validate()) {
-                    //   print("Sucessfull");
-                    //   return;
-                    // } else {
-                    //   print("Not worked");
-                    // }
-                  },
+                  onPressed: controller.onSignupPressed,
                   color: SGColors.blue,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)),

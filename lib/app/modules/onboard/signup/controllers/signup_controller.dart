@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:p2p/app/bloc/notification/notification_bloc.dart';
+import 'package:p2p/app/routes/routes.dart';
 
 class SignUpController extends GetxController {
   bool value = false;
@@ -9,8 +11,17 @@ class SignUpController extends GetxController {
 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
-  final TextEditingController password = TextEditingController();
-  final TextEditingController confirmPassword = TextEditingController();
+  final TextEditingController firstnameController = TextEditingController();
+  final TextEditingController lastNameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController dateOfBirthController = TextEditingController();
+  final TextEditingController nidOrPassportOrBirthCertController =
+      TextEditingController();
+  final TextEditingController phoneNumberController = TextEditingController();
+  final TextEditingController professionController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
 
   final count = 0.obs;
   @override
@@ -28,5 +39,12 @@ class SignUpController extends GetxController {
     super.onClose();
   }
 
-  void increment() => count.value++;
+  void onSignupPressed() {
+    if (firstnameController.text == '') {
+      NotificationBloc.to
+          .add(const ErrorNotificationEvent('First name is required'));
+      return;
+    }
+    Get.toNamed(Routes.otp_pin);
+  }
 }
