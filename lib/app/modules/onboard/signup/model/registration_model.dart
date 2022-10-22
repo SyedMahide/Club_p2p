@@ -21,11 +21,11 @@ class RegistrationModel {
   String? nid;
   String? dateOfBirth;
   String? profession;
-  String? userTypeId;
+  int? userTypeId;
   String? password;
   String? passwordConfirmation;
   String? deviceName;
-  String? concernId;
+  int? concernId;
 
   factory RegistrationModel.fromJson(Map<String, dynamic> json) =>
       RegistrationModel(

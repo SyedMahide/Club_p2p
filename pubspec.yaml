@@ -24,6 +24,9 @@ dependencies:
   equatable: ^2.0.5
   pedantic: ^1.11.1
   shared_preferences: ^2.0.15
+
+  email_validator: ^2.1.17
+  device_info_plus: ^7.0.1
   
   get: ^4.6.3
 
@@ -31,6 +34,9 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
+
+dependency_overrides:
+  ffi: ^1.0.0
 
 dev_dependencies:
   flutter_test:

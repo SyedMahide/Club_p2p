@@ -27,7 +27,7 @@ class _P2PAppState extends State<P2PApp> {
   void initState() {
     super.initState();
     _userBloc = UserBloc();
-    _notificationBloc = NotificationBloc();
+    _notificationBloc = Get.put(NotificationBloc());
     _userBlocProvider = BlocProvider<UserBloc>(
       lazy: false,
       create: (BuildContext context) {

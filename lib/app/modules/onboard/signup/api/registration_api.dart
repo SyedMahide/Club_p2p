@@ -4,8 +4,7 @@ import 'package:p2p/app/modules/onboard/signup/model/registration_model.dart';
 import 'package:p2p/shared/dio/dio_helper.dart';
 import 'package:p2p/shared/dio/global_dio.dart' as global;
 
-class HttpEditPageApi {
-  @override
+class RegistrationApi {
   Future<Either<String, bool>> registerUser(
       {required RegistrationModel model}) async {
     const String url = 'customer/register';
