@@ -11,6 +11,9 @@ class SignUpController extends GetxController {
 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
+   DateTime? temporaryDate,eventDate;
+
+
   final TextEditingController firstnameController = TextEditingController();
   final TextEditingController lastNameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
