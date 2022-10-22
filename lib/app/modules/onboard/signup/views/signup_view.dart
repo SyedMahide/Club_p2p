@@ -258,16 +258,6 @@ class SignUpView extends GetView<SignUpController> {
                       fontStyle: FontStyle.normal,
                     ),
                   ),
-                  validator: (String? value) {
-                    if (value!.isEmpty) {
-                      return "Please enter email";
-                    }
-                    if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+[a-z]")
-                        .hasMatch(value)) {
-                      return "Please enter valid email";
-                    }
-                    return null;
-                  },
                 ),
               ),
               Container(
@@ -346,7 +336,7 @@ class SignUpView extends GetView<SignUpController> {
                 alignment: Alignment.topLeft,
                 margin: const EdgeInsets.only(top: 16, left: 25),
                 child: const Text(
-                  "NID/ PASSPORT / BIRTH CERT.",
+                  "NID / PASSPORT / BIRTH CERT.",
                   style: TextStyle(
                     fontFamily: 'Questrial',
                     fontSize: 12,
@@ -621,14 +611,15 @@ class SignUpView extends GetView<SignUpController> {
                       fontStyle: FontStyle.normal,
                     ),
                     suffixIcon: IconButton(
-                        icon: Icon(controller.ishiddenPassword
-                            ? Icons.visibility_off
-                            : Icons.visibility),
-                        color: SGColors.white,
-                        onPressed: () {
-                          controller.ishiddenPassword =
-                              !controller.ishiddenPassword;
-                        }),
+                      icon: Icon(controller.ishiddenPassword
+                          ? Icons.visibility_off
+                          : Icons.visibility),
+                      color: SGColors.white,
+                      onPressed: () {
+                        controller.ishiddenPassword =
+                            !controller.ishiddenPassword;
+                      },
+                    ),
                   ),
                   validator: (String? value) {
                     if (value!.isEmpty) {

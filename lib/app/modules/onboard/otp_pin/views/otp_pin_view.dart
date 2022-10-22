@@ -159,7 +159,6 @@ class OtpPinView extends GetView<OtpPinController> {
                               ),
                             ),
                           ),
-
                           // Container(
                           //   margin: EdgeInsets.only(top: 10, left: 28),
                           //   child: Center(

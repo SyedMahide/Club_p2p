@@ -36,23 +36,24 @@ class OtpPinController extends GetxController {
   }
 
   void onComplete() async {
-    isLoading.value = true;
-    int? otp = int.tryParse(otpController.text);
-    if (otp == null) {
-      NotificationBloc.to
-          .add(const ErrorNotificationEvent('Something went wrong'));
-      return;
-    }
-    OtpApi api = OtpApi();
-    Either<String, bool> response = await api.verifyUser(otp: otp);
-    isLoading.value = false;
-    response.fold(
-      (String error) => NotificationBloc.to.add(ErrorNotificationEvent(error)),
-      (bool flag) {
-        if (flag == true) {
-          Get.toNamed(Routes.signin);
-        }
-      },
-    );
+    Get.toNamed(Routes.signin);
+    // isLoading.value = true;
+    // int? otp = int.tryParse(otpController.text);
+    // if (otp == null) {
+    //   NotificationBloc.to
+    //       .add(const ErrorNotificationEvent('Something went wrong'));
+    //   return;
+    // }
+    // OtpApi api = OtpApi();
+    // Either<String, bool> response = await api.verifyUser(otp: otp);
+    // isLoading.value = false;
+    // response.fold(
+    //   (String error) => NotificationBloc.to.add(ErrorNotificationEvent(error)),
+    //   (bool flag) {
+    //     if (flag == true) {
+    //       Get.toNamed(Routes.signin);
+    //     }
+    //   },
+    // );
   }
 }

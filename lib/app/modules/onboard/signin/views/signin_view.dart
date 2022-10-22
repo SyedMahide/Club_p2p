@@ -2,6 +2,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:p2p/app/routes/routes.dart';
+import 'package:p2p/app/styles/colors.dart';
 
 import '../../../../../shared/constants.dart';
 import '../controllers/signin_controller.dart';
@@ -12,8 +14,10 @@ class SigninView extends GetView<SigninController> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: SingleChildScrollView(
-        child: Container(
+      body: Visibility(
+        visible: !controller.isLoading.value,
+        replacement: const Center(child: CircularProgressIndicator()),
+        child: SingleChildScrollView(
           child: Column(
             children: [
               Container(
@@ -44,75 +48,144 @@ class SigninView extends GetView<SigninController> {
               ),
               Container(
                 alignment: Alignment.topLeft,
-                margin: const EdgeInsets.only(top: 24, left: 28, right: 119),
+                margin: const EdgeInsets.only(top: 16, left: 25),
                 child: const Text(
-                  "Enter your mobile number",
+                  "Email / Phone number",
                   style: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 16,
-                      fontWeight: FontWeight.w400,
-                      fontStyle: FontStyle.normal,
-                      color: Colors.white),
+                    fontFamily: 'Questrial',
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
+                    fontStyle: FontStyle.normal,
+                    color: SGColors.white,
+                  ),
                 ),
               ),
               Container(
-                // alignment: Alignment.center,
-                margin: EdgeInsets.only(top: 45, left: 50),
-                child: Center(
-                  child: Row(
-                    //mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Expanded(
-                        flex: 1,
-                        child: Container(
-                          margin: EdgeInsets.only(),
-                          child: const Image(
-                            image: AssetImage(AssetConst.icFlag),
-                          ),
-                        ),
+                padding: const EdgeInsets.only(top: 12, left: 25, right: 18),
+                child: TextFormField(
+                  controller: controller.emailController,
+                  keyboardType: TextInputType.text,
+                  cursorColor: SGColors.white,
+                  style: const TextStyle(
+                      color: SGColors.white,
+                      fontFamily: 'Questrial',
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14,
+                      fontStyle: FontStyle.normal),
+                  decoration: const InputDecoration(
+                    prefixIcon:
+                        Icon(Icons.manage_accounts, color: SGColors.white),
+                    border: InputBorder.none,
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                      borderSide: BorderSide(color: SGColors.white),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                      borderSide: BorderSide(color: SGColors.white),
+                    ),
+                    errorBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                        borderSide: BorderSide(
+                          width: 1,
+                          color: SGColors.red,
+                        )),
+                    focusedErrorBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                      borderSide: BorderSide(
+                        width: 1,
+                        color: SGColors.red,
                       ),
-                      Expanded(
-                        flex: 5,
-                        child: Container(
-                          height: 63,
-                          padding: const EdgeInsets.only(
-                              top: 10, left: 10, right: 55, bottom: 10),
-                          child: TextFormField(
-                            keyboardType: TextInputType.number,
-                            cursorColor: Colors.white,
-                            style: const TextStyle(
-                                color: Color(0xffB0AAAA),
-                                fontFamily: 'Questrial',
-                                fontWeight: FontWeight.w400,
-                                fontSize: 14,
-                                fontStyle: FontStyle.normal),
-                            decoration: const InputDecoration(
-                              border: InputBorder.none,
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius:
-                                BorderRadius.all(Radius.circular(2.0)),
-                                borderSide: BorderSide(color: Colors.white),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderRadius:
-                                BorderRadius.all(Radius.circular(2.0)),
-                                borderSide: BorderSide(color: Colors.white),
-                              ),
-                              hintText: "+8800000-000000",
-                              hintStyle: TextStyle(
-                                fontFamily: 'Questrial',
-                                color: Color(0xffB0AAAA),
-                                fontSize: 13,
-                                fontWeight: FontWeight.w400,
-                                fontStyle: FontStyle.normal,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
+                    ),
+                    hintText: "Email / Phone number",
+                    hintStyle: TextStyle(
+                      fontFamily: 'Questrial',
+                      color: SGColors.white,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                      fontStyle: FontStyle.normal,
+                    ),
                   ),
+                ),
+              ),
+              Container(
+                alignment: Alignment.topLeft,
+                margin: const EdgeInsets.only(top: 16, left: 25),
+                child: const Text(
+                  "Password",
+                  style: TextStyle(
+                    fontFamily: 'Questrial',
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
+                    fontStyle: FontStyle.normal,
+                    color: SGColors.white,
+                  ),
+                ),
+              ),
+              Container(
+                // height: 60,
+                margin: const EdgeInsets.only(top: 12, left: 25, right: 18),
+                child: TextFormField(
+                  obscureText: controller.ishiddenPassword,
+                  controller: controller.passwordController,
+                  cursorColor: SGColors.white,
+                  style: const TextStyle(
+                      color: SGColors.white,
+                      fontFamily: 'Questrial',
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14,
+                      fontStyle: FontStyle.normal),
+                  decoration: InputDecoration(
+                    prefixIcon: const Icon(
+                      Icons.lock_outline_sharp,
+                      color: SGColors.white,
+                    ),
+                    border: InputBorder.none,
+                    enabledBorder: const OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                      borderSide: BorderSide(color: SGColors.white),
+                    ),
+                    focusedBorder: const OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                      borderSide: BorderSide(color: SGColors.white),
+                    ),
+                    errorBorder: const OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                        borderSide: BorderSide(
+                          width: 1,
+                          color: SGColors.red,
+                        )),
+                    focusedErrorBorder: const OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                      borderSide: BorderSide(
+                        width: 1,
+                        color: SGColors.red,
+                      ),
+                    ),
+                    hintText: "Password",
+                    hintStyle: const TextStyle(
+                      fontFamily: 'Questrial',
+                      color: SGColors.white,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                      fontStyle: FontStyle.normal,
+                    ),
+                    suffixIcon: IconButton(
+                        icon: Icon(controller.ishiddenPassword
+                            ? Icons.visibility_off
+                            : Icons.visibility),
+                        color: SGColors.white,
+                        onPressed: () {
+                          controller.ishiddenPassword =
+                              !controller.ishiddenPassword;
+                        }),
+                  ),
+                  validator: (String? value) {
+                    if (value!.isEmpty) {
+                      return "Please enter password";
+                    }
+                    return null;
+                  },
                 ),
               ),
               Center(
@@ -126,14 +199,14 @@ class SigninView extends GetView<SigninController> {
                       //       builder: (context) => PinCodeVerificationScreen()),
                       // );
                     },
-                    color: Color(0xff4048BF),
+                    color: const Color(0xff4048BF),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8)),
                     child: Container(
                       alignment: Alignment.center,
                       margin: const EdgeInsets.only(top: 16, bottom: 16),
                       child: const Text(
-                        "Log in with OTP",
+                        "Log In",
                         style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w400,
@@ -151,33 +224,31 @@ class SigninView extends GetView<SigninController> {
                 child: Center(
                   child: RichText(
                     text: TextSpan(
-                        text: "Already Have An Account? ",
-                        style: const TextStyle(
-                          fontFamily: 'Questrial',
-                          color: Colors.white,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                          fontStyle: FontStyle.normal,
+                      text: "Already Have An Account? ",
+                      style: const TextStyle(
+                        fontFamily: 'Questrial',
+                        color: Colors.white,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w400,
+                        fontStyle: FontStyle.normal,
+                      ),
+                      children: [
+                        TextSpan(
+                          text: "Sign up",
+                          style: const TextStyle(
+                            fontFamily: 'Questrial',
+                            color: Colors.white,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                            fontStyle: FontStyle.normal,
+                          ),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              Get.toNamed(Routes.signup);
+                            },
                         ),
-                        children: [
-                          TextSpan(
-                              text: "Sign up",
-                              style: const TextStyle(
-                                fontFamily: 'Questrial',
-                                color: Colors.white,
-                                fontSize: 12,
-                                fontWeight: FontWeight.w500,
-                                fontStyle: FontStyle.normal,
-                              ),
-                              recognizer: TapGestureRecognizer()
-                                ..onTap = () {
-                                  // Navigator.push(
-                                  //   context,
-                                  //   MaterialPageRoute(
-                                  //       builder: (context) => SignInScreen()),
-                                  // );
-                                }),
-                        ]),
+                      ],
+                    ),
                   ),
                 ),
               ),
