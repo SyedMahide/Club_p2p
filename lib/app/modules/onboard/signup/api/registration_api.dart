@@ -16,7 +16,6 @@ class RegistrationApi {
         options: options,
         data: model.toJson(),
       );
-
       if (response.data['success'] == true) {
         return const Right<String, bool>(true);
       } else {

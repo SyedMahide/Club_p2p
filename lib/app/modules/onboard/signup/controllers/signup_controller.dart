@@ -62,7 +62,7 @@ class SignUpController extends GetxController {
           .add(const ErrorNotificationEvent('Email is required'));
       return;
     }
-    if (EmailValidator.validate(emailController.text.trim())) {
+    if (!EmailValidator.validate(emailController.text.trim())) {
       NotificationBloc.to
           .add(const ErrorNotificationEvent('Please provide a valid Email'));
       return;

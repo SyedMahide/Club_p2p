@@ -6,6 +6,8 @@ PODS:
     - HLSCachingReverseProxyServer
     - PINCache
   - Cache (6.0.0)
+  - device_info_plus (0.0.1):
+    - Flutter
   - Firebase/Analytics (9.5.0):
     - Firebase/Core
   - Firebase/Core (9.5.0):
@@ -146,6 +148,7 @@ PODS:
 
 DEPENDENCIES:
   - better_player (from `.symlinks/plugins/better_player/ios`)
+  - device_info_plus (from `.symlinks/plugins/device_info_plus/ios`)
   - firebase_analytics (from `.symlinks/plugins/firebase_analytics/ios`)
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - Flutter (from `Flutter`)
@@ -183,6 +186,8 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   better_player:
     :path: ".symlinks/plugins/better_player/ios"
+  device_info_plus:
+    :path: ".symlinks/plugins/device_info_plus/ios"
   firebase_analytics:
     :path: ".symlinks/plugins/firebase_analytics/ios"
   firebase_core:
@@ -213,6 +218,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   better_player: 2406bfe8175203c7a46fa15f9d778d73b12e1646
   Cache: 4ca7e00363fca5455f26534e5607634c820ffc2d
+  device_info_plus: e5c5da33f982a436e103237c0c85f9031142abed
   Firebase: 800f16f07af493d98d017446a315c27af0552f41
   firebase_analytics: 2ba886ecb9ded97cfe24f1765e1aa22075894709
   firebase_core: c266297725f66cacd7eac30745cd1a629d3b048b
