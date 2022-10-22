@@ -1,45 +1,27 @@
-import 'dart:async';
-
+import 'package:dartz/dartz.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:p2p/app/bloc/notification/notification_bloc.dart';
+import 'package:p2p/app/modules/onboard/otp_pin/api/otp_api.dart';
+import 'package:p2p/app/routes/routes.dart';
 
 class OtpPinController extends GetxController {
-  TextEditingController textEditingController = TextEditingController();
-
-  // ..text = "123456";
-
-  // ignore: close_sinks
-  StreamController<ErrorAnimationType>? errorController;
-  bool hasError = false;
-  String currentText = "";
-  final formKey = GlobalKey<FormState>();
-
-  final count = 0.obs;
-
-  @override
-  void initState() {
-    errorController = StreamController<ErrorAnimationType>();
-    // super.initState();
-  }
+  TextEditingController otpController = TextEditingController();
+  RxBool isLoading = false.obs;
 
   @override
   void dispose() {
-    errorController!.close();
     super.dispose();
   }
-  // snackBar(String? message) {
-  //   return ScaffoldMessenger.of(context).showSnackBar(
-  //     SnackBar(
-  //       content: Text(message!),
-  //       duration: const Duration(seconds: 2),
-  //     ),
-  //   );
-  // }
 
   @override
   void onInit() {
+    otpController.addListener(() {
+      if (otpController.text.length >= 6) {
+        onComplete();
+      }
+    });
     super.onInit();
   }
 
@@ -53,5 +35,24 @@ class OtpPinController extends GetxController {
     super.onClose();
   }
 
-  void increment() => count.value++;
+  void onComplete() async {
+    isLoading.value = true;
+    int? otp = int.tryParse(otpController.text);
+    if (otp == null) {
+      NotificationBloc.to
+          .add(const ErrorNotificationEvent('Something went wrong'));
+      return;
+    }
+    OtpApi api = OtpApi();
+    Either<String, bool> response = await api.verifyUser(otp: otp);
+    isLoading.value = false;
+    response.fold(
+      (String error) => NotificationBloc.to.add(ErrorNotificationEvent(error)),
+      (bool flag) {
+        if (flag == true) {
+          Get.toNamed(Routes.signin);
+        }
+      },
+    );
+  }
 }

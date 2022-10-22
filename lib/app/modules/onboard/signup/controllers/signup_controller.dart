@@ -47,97 +47,98 @@ class SignUpController extends GetxController {
   }
 
   Future<void> onSignupPressed() async {
-    if (firstnameController.text == '') {
-      NotificationBloc.to
-          .add(const ErrorNotificationEvent('First name is required'));
-      return;
-    }
-    if (lastNameController.text == '') {
-      NotificationBloc.to
-          .add(const ErrorNotificationEvent('Last name is required'));
-      return;
-    }
-    if (emailController.text == '') {
-      NotificationBloc.to
-          .add(const ErrorNotificationEvent('Email is required'));
-      return;
-    }
-    if (!EmailValidator.validate(emailController.text.trim())) {
-      NotificationBloc.to
-          .add(const ErrorNotificationEvent('Please provide a valid Email'));
-      return;
-    }
-    if (phoneNumberController.text == '') {
-      NotificationBloc.to
-          .add(const ErrorNotificationEvent('Phone number is required'));
-      return;
-    }
-    if (nidOrPassportOrBirthCertController.text == '') {
-      NotificationBloc.to.add(const ErrorNotificationEvent(
-          'Verification (NID / Passport / Birth Cert.) is required'));
-      return;
-    }
-    if (dateOfBirthController.text == '') {
-      NotificationBloc.to
-          .add(const ErrorNotificationEvent('Date of Birth is required'));
-      return;
-    }
-    if (professionController.text == '') {
-      NotificationBloc.to
-          .add(const ErrorNotificationEvent('Profession is required'));
-      return;
-    }
-    if (passwordController.text == '') {
-      NotificationBloc.to
-          .add(const ErrorNotificationEvent('Password is required'));
-      return;
-    }
-    if (confirmPasswordController.text == '') {
-      NotificationBloc.to
-          .add(const ErrorNotificationEvent('Confirm Password is required'));
-      return;
-    }
+    Get.toNamed(Routes.otp_pin);
+    //   if (firstnameController.text == '') {
+    //     NotificationBloc.to
+    //         .add(const ErrorNotificationEvent('First name is required'));
+    //     return;
+    //   }
+    //   if (lastNameController.text == '') {
+    //     NotificationBloc.to
+    //         .add(const ErrorNotificationEvent('Last name is required'));
+    //     return;
+    //   }
+    //   if (emailController.text == '') {
+    //     NotificationBloc.to
+    //         .add(const ErrorNotificationEvent('Email is required'));
+    //     return;
+    //   }
+    //   if (!EmailValidator.validate(emailController.text.trim())) {
+    //     NotificationBloc.to
+    //         .add(const ErrorNotificationEvent('Please provide a valid Email'));
+    //     return;
+    //   }
+    //   if (phoneNumberController.text == '') {
+    //     NotificationBloc.to
+    //         .add(const ErrorNotificationEvent('Phone number is required'));
+    //     return;
+    //   }
+    //   if (nidOrPassportOrBirthCertController.text == '') {
+    //     NotificationBloc.to.add(const ErrorNotificationEvent(
+    //         'Verification (NID / Passport / Birth Cert.) is required'));
+    //     return;
+    //   }
+    //   if (dateOfBirthController.text == '') {
+    //     NotificationBloc.to
+    //         .add(const ErrorNotificationEvent('Date of Birth is required'));
+    //     return;
+    //   }
+    //   if (professionController.text == '') {
+    //     NotificationBloc.to
+    //         .add(const ErrorNotificationEvent('Profession is required'));
+    //     return;
+    //   }
+    //   if (passwordController.text == '') {
+    //     NotificationBloc.to
+    //         .add(const ErrorNotificationEvent('Password is required'));
+    //     return;
+    //   }
+    //   if (confirmPasswordController.text == '') {
+    //     NotificationBloc.to
+    //         .add(const ErrorNotificationEvent('Confirm Password is required'));
+    //     return;
+    //   }
 
-    if (confirmPasswordController.text != passwordController.text) {
-      NotificationBloc.to
-          .add(const ErrorNotificationEvent('Both Password do not match'));
-      return;
-    }
+    //   if (confirmPasswordController.text != passwordController.text) {
+    //     NotificationBloc.to
+    //         .add(const ErrorNotificationEvent('Both Password do not match'));
+    //     return;
+    //   }
 
-    final DeviceInfoPlugin _deviceInfo = DeviceInfoPlugin();
-    IosDeviceInfo? _iosInfo;
-    AndroidDeviceInfo? _androidInfo;
-    if (Platform.isIOS) {
-      _iosInfo = await _deviceInfo.iosInfo;
-    } else if (Platform.isAndroid) {
-      _androidInfo = await _deviceInfo.androidInfo;
-    }
+    //   final DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+    //   IosDeviceInfo? iosInfo;
+    //   AndroidDeviceInfo? androidInfo;
+    //   if (Platform.isIOS) {
+    //     iosInfo = await deviceInfo.iosInfo;
+    //   } else if (Platform.isAndroid) {
+    //     androidInfo = await deviceInfo.androidInfo;
+    //   }
 
-    RegistrationModel model = RegistrationModel(
-      firstName: firstnameController.text,
-      lastName: lastNameController.text,
-      email: emailController.text,
-      phone: phoneNumberController.text,
-      nid: nidOrPassportOrBirthCertController.text,
-      dateOfBirth: dateOfBirthController.text,
-      profession: professionController.text,
-      userTypeId: 3,
-      password: passwordController.text,
-      passwordConfirmation: confirmPasswordController.text,
-      concernId: 1,
-      deviceName: _iosInfo?.utsname.machine ?? _androidInfo?.model,
-    );
+    //   RegistrationModel model = RegistrationModel(
+    //     firstName: firstnameController.text,
+    //     lastName: lastNameController.text,
+    //     email: emailController.text,
+    //     phone: phoneNumberController.text,
+    //     nid: nidOrPassportOrBirthCertController.text,
+    //     dateOfBirth: dateOfBirthController.text,
+    //     profession: professionController.text,
+    //     userTypeId: 3,
+    //     password: passwordController.text,
+    //     passwordConfirmation: confirmPasswordController.text,
+    //     concernId: 1,
+    //     deviceName: iosInfo?.utsname.machine ?? androidInfo?.model,
+    //   );
 
-    RegistrationApi api = RegistrationApi();
-    Either<String, bool> response = await api.registerUser(model: model);
+    //   RegistrationApi api = RegistrationApi();
+    //   Either<String, bool> response = await api.registerUser(model: model);
 
-    response.fold(
-      (String error) => NotificationBloc.to.add(ErrorNotificationEvent(error)),
-      (bool flag) {
-        if (flag == true) {
-          Get.toNamed(Routes.otp_pin);
-        }
-      },
-    );
+    //   response.fold(
+    //     (String error) => NotificationBloc.to.add(ErrorNotificationEvent(error)),
+    //     (bool flag) {
+    //       if (flag == true) {
+    //         Get.toNamed(Routes.otp_pin);
+    //       }
+    //     },
+    //   );
   }
 }
