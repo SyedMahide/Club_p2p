@@ -68,7 +68,7 @@ class SignUpView extends GetView<SignUpController> {
               Container(
                 padding: const EdgeInsets.only(top: 12, left: 25, right: 18),
                 child: TextFormField(
-                  controller: controller.lastNameController,
+                  controller: controller.firstnameController,
                   keyboardType: TextInputType.text,
                   cursorColor: SGColors.white,
                   style: const TextStyle(
@@ -141,6 +141,7 @@ class SignUpView extends GetView<SignUpController> {
               Container(
                 padding: const EdgeInsets.only(top: 12, left: 25, right: 18),
                 child: TextFormField(
+                  controller: controller.lastNameController,
                   keyboardType: TextInputType.text,
                   cursorColor: SGColors.white,
                   style: const TextStyle(
@@ -214,6 +215,7 @@ class SignUpView extends GetView<SignUpController> {
               Container(
                 padding: const EdgeInsets.only(top: 12, left: 25, right: 18),
                 child: TextFormField(
+                  controller: controller.emailController,
                   keyboardType: TextInputType.text,
                   cursorColor: SGColors.white,
                   style: const TextStyle(
@@ -285,6 +287,7 @@ class SignUpView extends GetView<SignUpController> {
               Container(
                 padding: const EdgeInsets.only(top: 12, left: 25, right: 18),
                 child: TextFormField(
+                  controller: controller.phoneNumberController,
                   keyboardType: TextInputType.text,
                   cursorColor: SGColors.white,
                   style: const TextStyle(
@@ -356,6 +359,7 @@ class SignUpView extends GetView<SignUpController> {
               Container(
                 padding: const EdgeInsets.only(top: 10, left: 25, right: 18),
                 child: TextFormField(
+                  controller: controller.nidOrPassportOrBirthCertController,
                   keyboardType: TextInputType.text,
                   cursorColor: SGColors.white,
                   style: const TextStyle(
@@ -427,6 +431,7 @@ class SignUpView extends GetView<SignUpController> {
               Container(
                 padding: const EdgeInsets.only(top: 12, left: 25, right: 18),
                 child: TextFormField(
+                  controller: controller.dateOfBirthController,
                   keyboardType: TextInputType.text,
                   cursorColor: SGColors.white,
                   style: const TextStyle(
@@ -498,6 +503,7 @@ class SignUpView extends GetView<SignUpController> {
               Container(
                 padding: const EdgeInsets.only(top: 10, left: 25, right: 18),
                 child: TextFormField(
+                  controller: controller.professionController,
                   keyboardType: TextInputType.text,
                   cursorColor: SGColors.white,
                   style: const TextStyle(
