@@ -13,8 +13,8 @@ import 'package:p2p/app/routes/routes.dart';
 class SignUpController extends GetxController {
   bool value = false;
 
-  bool ishiddenPassword = true;
-  bool ishiddenConfirmPassword = true;
+ RxBool ishiddenPassword = true.obs;
+ RxBool ishiddenConfirmPassword = true.obs;
 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 

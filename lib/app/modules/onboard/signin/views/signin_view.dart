@@ -126,7 +126,7 @@ class SigninView extends GetView<SigninController> {
                 // height: 60,
                 margin: const EdgeInsets.only(top: 12, left: 25, right: 18),
                 child: TextFormField(
-                  obscureText: controller.ishiddenPassword,
+                  obscureText: controller.ishiddenPassword.value,
                   controller: controller.passwordController,
                   cursorColor: SGColors.white,
                   style: const TextStyle(
@@ -171,13 +171,13 @@ class SigninView extends GetView<SigninController> {
                       fontStyle: FontStyle.normal,
                     ),
                     suffixIcon: IconButton(
-                        icon: Icon(controller.ishiddenPassword
+                        icon: Icon(controller.ishiddenPassword.value
                             ? Icons.visibility_off
                             : Icons.visibility),
                         color: SGColors.white,
                         onPressed: () {
-                          controller.ishiddenPassword =
-                              !controller.ishiddenPassword;
+                          controller.ishiddenPassword.value =
+                              !controller.ishiddenPassword.value;
                         }),
                   ),
                   validator: (String? value) {

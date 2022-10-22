@@ -12,8 +12,8 @@ class SigninController extends GetxController {
 
   RxBool isLoading = false.obs;
 
-  bool ishiddenPassword = true;
-  bool ishiddenConfirmPassword = true;
+  RxBool ishiddenPassword = true.obs;
+  RxBool ishiddenConfirmPassword = true.obs;
   @override
   void onInit() {
     super.onInit();
