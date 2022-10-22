@@ -12,5 +12,6 @@ class SGColors {
   static const Color skyBlue =  Color(0xff1877F2);
   static const Color green =  Color(0xff4CAF50);
   static const Color indigo =  Color(0xff3F51B5);
+  static const Color gray =  Color(0xffB0AAAA);
 
 }
